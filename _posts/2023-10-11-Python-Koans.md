@@ -15,7 +15,7 @@ In order to master Python, I am doing the *Python Koans*!
 The first portion so far has been relatively straight forward. Since it is my first language it is taking sometime to learn the ins and outs utilized by the language. I realize by completing this I will not know everything, nor have everything memorized, but I will learn a lot. Along with learning it will provide a great resource in the future if I have problems or questions regarding Python.
 
 ## Exceptions and Errors
-The section of koans that was giving me the most trouble has been Exceptions and Errors `cue the spooky music`. You know how to get better at understanding something? Blog about it!
+The section of koans that was giving me the most trouble today has been Exceptions and Errors `cue the spooky music`. You know how to get better at understanding something? Blog about it!
 
 I'm used to seeing SyntaxErrors like so:
 
@@ -81,8 +81,10 @@ class MySpecialError(RuntimeError):
 
 For this moment I have chosen the simplest understanding for this path. In time I hope this koan will bring me to enlightenment. My understanding of these Errors and Exceptions so far, is that there is one king and that is `Exception`. Under the king there are noble-exceptions like `RuntimeError`, and you can create general populace exceptions like `MySpecialError`.
 
-Overall it was a good day. I think my biggest difficulty is understanding Classes. Over time and koans I believe I will gain more understanding of the subject matter. And I will provide my insight here.
+Overall it was a good day. Outside of Errors, I think my biggest difficulty is understanding Classes. Over time and koans I believe I will gain more understanding of the subject matter. And I will provide my insight here.
 
 Best,
 
 Merl   
+
+P.S. I had a SyntaxError trying to publish this on my blog. How ironic!

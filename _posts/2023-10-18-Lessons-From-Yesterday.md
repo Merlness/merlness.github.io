@@ -8,7 +8,7 @@ categories: media
 So far on my short journey I have come across three steps I need to take in order to pass an *Advent of Code* challenge. Of course over time I am sure I will have a more nuanced view and understanding.
 Until then, let's keep things simple.  
 
-# Step 1: Problem solve
+# Step 1: Problem solving
 In life if one is presented with a problem, one must solve it. There are many methods to do this, so just choose one! This was the lesson from yesterday.
 Of course, you can boil everything down to this. I am referring to specifically the image you create in your mind to create a path in which you could move forward in the problem.
 
@@ -45,7 +45,7 @@ flat_original_list = [101, 301, 501, 102, 302, 502 ...]
 
 #What I thought of was to group them like I would for any triangle, in a list of lists. I have become very fond of these recently.
 
-fake_triangle_list = [[101, 301, 501], [102, 302, 502], ...]
+fake_triangle_list = [[101, 301, 501], [102, 302, 502], ...]  
 
 #Now this is what I did in the first part of the problem
 #I wanted to use this template,

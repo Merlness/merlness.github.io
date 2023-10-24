@@ -58,10 +58,10 @@ date_format: "%B %d, %Y"
 
 # Layout
 
-show_excerpts: true        # show article excerpts on the home page
+show_excerpts: false        # show article excerpts on the home page
 show_frame: true           # adds a gray frame to the site
 show_sidebar: false        # show a sidebar instead of the usual header
-
+#I changed show and show_sidebar 10-24 if anything happened
 # Menu
 
 navigation:                # accepts {file, title, url, icon, sidebaricon}

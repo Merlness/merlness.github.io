@@ -1,5 +1,5 @@
 ---
-title:  "Clojure Exposure"
+title:  "Algorithms"
 mathjax: true
 layout: post
 categories: media

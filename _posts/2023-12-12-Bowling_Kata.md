@@ -10,7 +10,7 @@ It is now my turn to join the greats in creating my own Bowling Game Kata video.
 
 Originally, I was thinking of having a cool vibe and having an RnB track in the back playing while some lovely coding was happening.
 
-Then I pondered on the wise words of old Bill Shakespear "To thine own self be true"
+Then I pondered on the wise words of old Bill Shakespeare "To thine own self be true"
 To be fair when people think of me I am sure hip hop is a quality that comes up.  
 
 I tried to create a hybrid version of what I had seen before, a mixture of explanation and vibes. A Vib-nation if you will.

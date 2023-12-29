@@ -1,5 +1,5 @@
 ---
-title:  "Bowling Game Kata"
+title:  "FIZZBUZZ Kata"
 mathjax: true
 layout: post
 categories: media

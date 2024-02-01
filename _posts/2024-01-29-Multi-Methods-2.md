@@ -10,12 +10,9 @@ Multi-methods-2
 It has been an interesting one. I am in the process of refactoring my previous code and I wanted to provide another short example of multimethods that could provide this ability.
 
 ```clojure
-
 (defmulti ai-move (fn [_board _ai-token _opponent-token difficulty] difficulty))
 
-
 (defmethod ai-move :easy [board _ai-token _opponent _difficulty] (ec/place-easy-move board))
-
 
 (defmethod ai-move :medium [board ai-token opponent-token _difficulty]
  (let [move-count (count (remove number? board))
@@ -23,7 +20,6 @@ It has been an interesting one. I am in the process of refactoring my previous c
    (if hard-ai?
      (mm/next-move-real board ai-token opponent-token)
      (ec/place-easy-move board))))
-
 
 (defmethod ai-move :hard [board ai-token opponent-token _difficulty]
  (mm/next-move-real board ai-token opponent-token))
@@ -39,11 +35,8 @@ Now you see I pass through the ai token and the opponent token, and I only have 
 Here is part of my previous code below:
 
 ```clojure
-
-
 (defn next-hard-move [token]
  (if (= token "X") mm/next-move-2 mm/next-move))
-
 
 (defn hard-ai-x-o [difficulty user-token]
  (if (and (= mm/next-move difficulty)
@@ -51,14 +44,12 @@ Here is part of my previous code below:
    mm/next-move-2
    difficulty))
 
-
 (defn medium-difficulty [next-move grid]
  (let [move-count (count (remove number? grid))
        hard-ai? (or (< move-count 5) (zero? (rand-int 2)))]
    (if hard-ai?
      (next-move grid)
      (ec/place-easy-move grid))))
-
 ```
 
 Best,

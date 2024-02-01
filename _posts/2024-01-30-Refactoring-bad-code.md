@@ -8,14 +8,12 @@ categories: media
 
 I know this is the never ending story but let me add this chapter.
 
-I will begin by providing my previous code that was the same exact idea for 3 different game types. Human vs human, human vs computer, and finally computer vs computer. 
+I will begin by providing my previous code that was the same exact idea for 3 different game types. Human vs human, human vs computer, and finally computer vs computer.
 
 ```clojure
 (defn two-humans [board]
  (let [x-o (ui/get-user-x-o)
        display board/display]
-
-
    (loop [grid board
           X? x-o]
      (ui/print-board grid display)
@@ -23,7 +21,6 @@ I will begin by providing my previous code that was the same exact idea for 3 di
        (if (ui/endgame-result new-grid)
          (ui/print-end new-grid display)
          (recur new-grid (not X?)))))))
-
 
 (defn comp-vs-comp [board difficulty-1 difficulty-2]
  (loop [grid board
@@ -37,7 +34,6 @@ I will begin by providing my previous code that was the same exact idea for 3 di
        (recur new-grid (not x-turn?))
        (ui/print-end-computer new-grid)))))
 
-
 (defn human-vs-comp [board difficulty]
  (let [user-token (ui/get-user-vs-ai-x-o)
        difficulty (hard-ai-x-o difficulty user-token)]
@@ -49,7 +45,6 @@ I will begin by providing my previous code that was the same exact idea for 3 di
        (if (not (ui/endgame-result new-grid))
          (recur new-grid (not comp-turn?))
          (ui/print-end-computer new-grid))))))
-
 ```
 As you can see they have basically identical structures. However I built them at different times, and so I built added to my code instead of refactoring.
 
@@ -60,10 +55,6 @@ I wanted to create new loop that could handle every combination you can imagine,
 After much deliberation, this is the solution I have as of today. It needs more work especially with the player maps. But as of right now it works, and it is glorious. But again it needs to be refactored more.
 
 ```clojure
-
-
-
-
 (defn player-vs-player []
  (let [board (board-size)
        player-1 (create-player 1 nil)

@@ -5,3 +5,6 @@
 Gemfile.lock
 _site
 *.gem
+fizzbuzz/fizzbuzz.iml
+coin-changer/
+hello.txt

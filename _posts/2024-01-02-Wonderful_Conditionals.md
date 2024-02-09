@@ -5,7 +5,7 @@ layout: post
 categories: media
 ---
 
-Wonderful condition(al)s
+
 
 Today I worked on finishing up Tic Tac Toe in Clojure. This included writing the main, computer, but most importantly the minimax file. They are all tied together, and the biggest piece like I mentioned was minimax. 
 

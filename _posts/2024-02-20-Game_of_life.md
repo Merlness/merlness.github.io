@@ -25,9 +25,10 @@ Here are my first tests to  check my concepts on these rules:
 ```clojure
 
 (it "checks rule 1"
-         ;| whether the cell lives or dies
-         ;|                 | number of neighbors
-         ;V                 V V  1 for live cell, 0 for dead cell
+         ;whether the cell lives or dies
+         ;|                 number of neighbors
+         ;|                 | 1 for live cell, 0 for dead cell
+         ;V                 V V  
  (should= 0 (sut/next-state 0 1))
  (should= 0 (sut/next-state 1 1)))
 
@@ -67,6 +68,8 @@ Of course I used TDD and did these incrementally. However I wanted to show what 
    0))
 
 ```
+## My Rules
+
 I thought this was very interesting because it seems like you could potentially limit it to 3 rules. I guess it really depends on how you define rules but I still think 3 is a reasonable number.
 
 1. Any cell with three  live neighbors lives, because 3 is amazing

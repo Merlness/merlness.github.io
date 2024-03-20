@@ -1,11 +1,11 @@
 ---
-title:  "Making Boxes"
+title:  "Making Buttons"
 mathjax: true
 layout: post
 categories: media
 ---
 
-In the world of Quil is is important to make boxes/rectangles.
+In the world of Quil is is important to make boxes/rectangles/buttons.
 
 Before I was able to make those boxes, however I made them one after the other. This meant I was able to use a `doseq` to make one after another. Also the size of the box was the dimensions of the GUI divided by 3 or 4.
 

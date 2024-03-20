@@ -60,7 +60,6 @@ This is great because mouse pressed is already built into the function. On top o
 
 Instead of making my own implementation, I can use the built in secret features from quil.
 
-
 Best,
 
 Merl

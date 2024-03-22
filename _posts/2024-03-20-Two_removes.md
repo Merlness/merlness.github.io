@@ -11,7 +11,7 @@ Let us focus on MyArrayList for now.
 
 I prefer MyArrayList because most of it seems straight forward. I had already created an Iterator for this class so I had to create a remove method, but i wanted to incorporate new methods with it.
 
-```clojure
+```java
 @Override
 public T remove(int index) {
    if (index < 0 || index >= count) {
@@ -29,7 +29,7 @@ This is the first remove. Nothing fancy, just removing an item based on its inde
 
 I began the process of doing so, however I noticed I had another method that might be helpful.
 
-```clojure
+```java
 @Override
 public int indexOf(Object o) {
    for (int currentIndex = 0; currentIndex < count; currentIndex++) {

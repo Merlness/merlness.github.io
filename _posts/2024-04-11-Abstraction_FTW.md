@@ -5,7 +5,6 @@ layout: post
 categories: media
 ---
 
-
 There is a difference between knowing something and implementing it.
 
 I have been well versed in the SOLID principles, on top of that I have given short presentations on them. However, sometimes it may be difficult to implement those ideas into your code.

@@ -5,11 +5,11 @@ layout: post
 categories: media
 ---
 
-The try catch block has been quite helpful in helping me keep my server running. While I was creating my server, every now and then it would just randomly stop working. 
+The try catch block has been quite helpful in helping me keep my server running. While I was creating my server, every now and then it would just randomly stop working.
 
-There were many reasons for this. Sometimes it was a bug, sometimes it was unhandled situations, but all in all it wa because my code just wasnt very good.
+There were many reasons for this. Sometimes it was a bug, sometimes it was unhandled situations, but all in all it was because my code just wasn't very good.
 
-Insert the try catch and theis was quite the savior. It helped allow my server to keep working even though there may have been problems with my code.
+Insert the try catch and this was quite the savior. It helped allow my server to keep working even though there may have been problems with my code.
 
 I think the problem now is that I have been using it too much.
 

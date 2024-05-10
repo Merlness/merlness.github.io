@@ -12,13 +12,13 @@ What do you do?
 
 Well, sadly you are ignorant of any solutions so you must make them all by hand. You know that you must make many different flavors. But because you make each one by hand they all are shaped differently, some look great, others terrible and towards the end they stop looking like a person at all?
 
-![gingerman](/Merl/images/gingerman.PNG)
+![gingerman](Merl/images/gingerman.PNG)
 
 What if you knew about cookie cutters? What if you were able to use a cookie cutter to help you and this gave you more time to focus on what you wanted, which was to decorate the cookies in the style that you wanted. Or go and nap!
 
-![gingerbreadcutter](/Merl/images/gingerbreadcutter.PNG)
+![gingerbreadcutter](Merl/images/gingerbreadcutter.PNG)
 
-![gingermen](/Merl/images/gingermen.PNG)
+![gingermen](Merl/images/gingermen.PNG)
 
 If you want to make many stars or hearts you can use the same strategy.
 

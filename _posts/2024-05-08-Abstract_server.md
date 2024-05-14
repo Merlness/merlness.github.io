@@ -11,7 +11,7 @@ What would you do?
 
 I say if the situation is that simple then just create a light object, place turn off and turn on inside. Then you should have a Swtich to do just that. Nice and simple!
 
-![One](/Merl/images/33_1.jpg)
+![One](../images/33_1.jpg)
 
 As we all know, life is never that simple. And as a developer you should know this as well.
 

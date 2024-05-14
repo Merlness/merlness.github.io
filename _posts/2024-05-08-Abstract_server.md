@@ -19,7 +19,7 @@ Let us add in a fan to go with it.
 
 Well, then let’s just add another object Fan, again it can turn on and off. Then we need a Fan Switch which can control the fan as well. Fan Switch could inherit from Switch. However, Switch is dependent on light, so that means we have to take light everywhere we take Switch.  So Fan Switch would be dependent on the object light.
 
-![Two](/Merl/images/33_3.jpg)
+![Two](../images/33_3.jpg)
 
 If only there was a Design Pattern to help us solve this ….
 
@@ -31,7 +31,7 @@ Here we can create an Interface Switchable and have the Light and Fan object imp
 
 This gets rid of our previous violations because now we are dependant on abstraction and not concrete details, as well as if we want to add more lights, fans, or anything that has a switch we can do so easily without disrupting the rest of the code.
 
-![Three](/Merl/images/33_3.jpg)
+![Three](../images/33_3.jpg)
 
 Hopefully this helps describe the Abstract Server.
 

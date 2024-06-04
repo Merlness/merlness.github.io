@@ -22,7 +22,8 @@ Testing
 <script src="/assets/ttt_source/cljs/ttt_merlness_dev.js" type="text/javascript"></script>
 
 <script type="text/javascript">goog.require("ttt_clojure.core")</script>
-
+<body>
 <div id="ttt_merlness_dev"></div>
 
 <script> ttt_clojure.core.main()</script>
+</body>

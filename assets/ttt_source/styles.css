@@ -17,6 +17,7 @@ body {
 
 .container {
     text-align: center;
+    color: black;
 }
 
 .flex-center {
@@ -46,4 +47,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.game-result {
+    text-align-last: center;
+}
+
+p {
+    text-align: center;
 }

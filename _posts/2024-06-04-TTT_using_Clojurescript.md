@@ -4,16 +4,9 @@ mathjax: true
 layout: post
 categories: media
 ---
-Testing
-
-/Users/merlmartin/Documents/GitHub/TTT_clojure/resources/public
-/Users/merlmartin/Documents/GitHub/Merl/_posts
+    This is test 5
 
 
-
-    4
-
-<body>
 <script src="/assets/ttt_source/cljs/goog/base.js" type="text/javascript"></script>
 <link rel="stylesheet" href="/assets/ttt_source/styles.css">
 <script src="/assets/ttt_source/cljs/ttt_merlness_dev.js" type="text/javascript"></script>
@@ -23,4 +16,3 @@ Testing
 <div id="ttt_merlness_dev"></div>
 
 <script> ttt_clojure.core.main()</script>
-</body>

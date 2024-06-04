@@ -1,0 +1,1 @@
+{:output-dir "resources/public/cljs", :cache-analysis true, :sources ["spec" "src"], :optimizations :none, :cljs.closure/watch-triggered-build? true, :verbose false, :output-to "resources/public/cljs/ttt_merlness_dev.js", :specs true, :source-map true, :watch-fn #'c3kit.scaffold.cljs/on-dev-compiled, :pretty-print true}

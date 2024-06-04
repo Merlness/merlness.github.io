@@ -1,5 +1,5 @@
 ---
-title: "Tic Tac Toe"
+title: ""
 permalink: "/tictactoe/"
 layout: page
 ---

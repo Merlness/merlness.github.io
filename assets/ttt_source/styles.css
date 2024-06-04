@@ -16,9 +16,7 @@ body {
     justify-content: center;
 }
 
-p {
-    text-align: center;
-}
+
 
 .container {
     text-align: center;
@@ -54,6 +52,7 @@ p {
     align-items: center;
 }
 
-.game-result {
-    text-align-last: center;
+
+.centered-text {
+    text-align: center;
 }

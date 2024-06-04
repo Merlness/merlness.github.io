@@ -40,17 +40,17 @@
   [:div
    [:h1 "Choose your Tic Tac Toe Options"]
    [:form {:on-submit #(handle-submit %)}
-    [:p "Please choose which board you want to play with"]
+    [:p {:class "centered-text"} "Please choose which board you want to play with"]
     [radio-option "3x3" "size" :3x3 "3x3" #(swap! game-state assoc :size :3x3)]
     [radio-option "4x4" "size" :4x4 "4x4" #(swap! game-state assoc :size :4x4)]
 
-    [:p "Please Select Player 1"]
+    [:p {:class "centered-text"} "Please Select Player 1"]
     [radio-option "human1" "player_1" :human "human" #(swap! game-state assoc-in [:player-1 :kind] :human)]
     [radio-option "ai_easy1" "player_1" :ai_easy "easy ai" (update-player :player-1 :ai :easy)]
     [radio-option "ai_medium1" "player_1" :ai_medium "medium ai" (update-player :player-1 :ai :medium)]
     [radio-option "ai_hard1" "player_1" :ai_hard "hard ai" (update-player :player-1 :ai :hard)]
 
-    [:p "Please Select Player 2"]
+    [:p {:class "centered-text"} "Please Select Player 2"]
     [radio-option "human2" "player_2" :human "human" #(swap! game-state assoc-in [:player-2 :kind] :human)]
     [radio-option "ai_easy2" "player_2" :ai_easy "easy ai" (update-player :player-2 :ai :easy)]
     [radio-option "ai_medium2" "player_2" :ai_medium "medium ai" (update-player :player-2 :ai :medium)]
@@ -117,7 +117,7 @@
 (defn game-over-display [grid]
   (when (board/game-over? grid {:token "X"} {:token "O"})
     [:div.game-result
-     [:p (ui/endgame-result grid "X" "O")]]))
+     [:p {:class "centered-text"} (ui/endgame-result grid "X" "O")]]))
 
 (defn player-name [current-player]
   (if (= (:kind current-player) :human)

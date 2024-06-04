@@ -12,7 +12,8 @@ Please allow me to introduce myself, my name is Merl Martin.
 
 I am in the process of becoming a better programmer.
 
-My first career was in education, which lasted for 8 years. It was great. The kids, the staff, the parents were wonderful (most of the time). However it was time for a change, in order to seek future challenges.
+My first career was in education, which lasted for 8 years. It was great. The kids, the staff, the parents were wonderful (most of the time).
+However, a change was necessary to pursue future challenges.
 
 As you can see from the photo above my interests are nature, traveling, and photography. Preferably all at once.
 

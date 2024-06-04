@@ -7,8 +7,8 @@ layout: page
 Please allow me to introduce myself, my name is Merl Martin.
 
 
-![Me-Badlands](https://github.com/Merlness/Merlness/assets/132521590/7b1ef32d-9126-4efb-9cc1-e7bf142a6ef7)
-
+[//]: # (![Me-Badlands]&#40;https://github.com/Merlness/Merlness/assets/132521590/7b1ef32d-9126-4efb-9cc1-e7bf142a6ef7&#41;)
+![Badlands-Me](images/me_bigger.jpg)
 
 I am in the process of becoming a better programmer.
 

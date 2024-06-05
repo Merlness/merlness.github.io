@@ -11,12 +11,13 @@
    :player-2 {:kind :human :token "O"}
    :size     :3x3
    :moves    []
-   :new-game true})
+   :new-game true
+   :ai-thinking false})
 
 (defonce game-state (r/atom default-game-state))
 
-(defn handle-submit [e]
-  (.preventDefault e)
+(defn handle-submit [event]
+  (.preventDefault event)
   (swap! game-state assoc :new-game false))
 
 
@@ -59,11 +60,14 @@
     [:input {:type "submit" :value "Submit"}]]])
 
 (defn new-game-button []
-  [:form {:on-submit (fn [e]
-                       (.preventDefault e)
+  [:form {:on-submit (fn [event]
+                       (.preventDefault event)
                        (reset! game-state default-game-state))}
    [:button
-    {:type "submit" :class "new-game-btn" :name "newGame" :value "true"}
+    {:type "submit"
+     :class "new-game-btn"
+     :name "newGame"
+     :value "true"}
     "New Game"]])
 
 (defn can-update? [grid index]
@@ -134,29 +138,61 @@
         player-name (player-name current-player)]
     (str "Player " player-number " " player-name "'s turn")))
 
-(defn ai-move-button [current-player]
-  (when (= :ai (:kind current-player))
-    [:div.flex-center
-     [:button
-      {:class    "ai-move-btn"
-       :on-click #(update-grid -1)}
-      "AI Move"]]))
 
-(defn in-progress-display [grid current-player]
+;(defn ai-move-button []
+;  (let [ai-thinking (:ai-thinking @game-state)]
+;    (if ai-thinking
+;      [:div.flex-center
+;       [:p "The AI is thinking..."]]
+;      [:div.flex-center
+;       [:button
+;        {:class    "ai-move-btn"
+;         :on-click (fn []
+;                     (swap! game-state assoc :ai-thinking true)
+;                     (js/setTimeout
+;                       (fn []
+;                         (update-grid -1)
+;                         (swap! game-state assoc :ai-thinking false))
+;                       500))}
+;        "AI Move"]])))
+
+(defn ai-thinking-message []
+  [:div.flex-center
+   [:p "The AI is thinking..."]])
+
+(defn handle-ai-move-click []
+  (swap! game-state assoc :ai-thinking true)
+  (js/setTimeout
+    (fn []
+      (update-grid -1)
+      (swap! game-state assoc :ai-thinking false))
+    500))
+
+(defn ai-move-button []
+  (let [ai-thinking (:ai-thinking @game-state)]
+    (if ai-thinking
+      [ai-thinking-message]
+      [:div.flex-center
+       [:button
+        {:class    "ai-move-btn"
+         :on-click handle-ai-move-click}
+        "AI Move"]])))
+
+(defn in-progress-display [grid]
   (when (not (board/game-over? grid {:token "X"} {:token "O"}))
     [:div
      [turn-message @game-state]
-     [ai-move-button current-player]]))
+     [ai-move-button]]))
 
 (defn game-screen [grid side]
   (let [moves (:moves @game-state)
         [current-player _] (get-players @game-state moves)]
     [:<>
      [:h1 "Welcome to Merl's Tic Tac Toe"]
-     [in-progress-display grid current-player]
+     [new-game-button]
      [make-grid grid side]
-     [game-over-display grid]
-     [new-game-button]]))
+     [in-progress-display grid current-player]
+     [game-over-display grid]]))
 
 (defn tic-tac-toe []
   (let [{:keys [new-game size]} @game-state
@@ -167,4 +203,24 @@
        [game-options-form]
        [game-screen grid side])]))
 
-;how to host a clojure project on netlify
+;tests in cljc, tests match source
+;move ai-move so the grid doesn't change
+; place "AI is thinking"
+
+
+
+;Internal Dev
+;Complete stories
+;be productive in a brand new code base
+;styles of dev, gotta learn to connect
+;might find some bad styles, clean it up
+;follow patterns that you see, mostly
+;pair programming, do it
+;hit up greg
+
+;future clients less tech savy, get it to work
+;new stories less scripted,
+
+
+;pair as much as possible to
+; learn more to be better equipped to estimate

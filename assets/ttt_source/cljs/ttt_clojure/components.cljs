@@ -6,12 +6,12 @@
             [ttt-clojure.ui :as ui]))
 
 (def default-game-state
-  {:game-id  1
-   :player-1 {:kind :human :token "X"}
-   :player-2 {:kind :human :token "O"}
-   :size     :3x3
-   :moves    []
-   :new-game true
+  {:game-id     1
+   :player-1    {:kind :human :token "X"}
+   :player-2    {:kind :human :token "O"}
+   :size        :3x3
+   :moves       []
+   :new-game    true
    :ai-thinking false})
 
 (defonce game-state (r/atom default-game-state))
@@ -19,7 +19,6 @@
 (defn handle-submit [event]
   (.preventDefault event)
   (swap! game-state assoc :new-game false))
-
 
 (defn update-player [player-key kind difficulty]
   (fn []
@@ -64,9 +63,9 @@
                        (.preventDefault event)
                        (reset! game-state default-game-state))}
    [:button
-    {:type "submit"
+    {:type  "submit"
      :class "new-game-btn"
-     :name "newGame"
+     :name  "newGame"
      :value "true"}
     "New Game"]])
 
@@ -80,11 +79,20 @@
     [(:player-1 game) (:player-2 game)]
     [(:player-2 game) (:player-1 game)]))
 
+(defn human-or-ai [player]
+  (let
+    [moves (:moves @game-state)
+     [current-player _] (get-players @game-state moves)]
+    (= (:kind current-player) player)))
+
+(defn human? [] (human-or-ai :human))
+(defn ai? [] (human-or-ai :ai))
+
 (defn calculate-move [state index]
   (let [moves (:moves state)
         [current-player opponent] (get-players state moves)
         grid (game/convert-moves-to-board state)]
-    (if (= :ai (:kind current-player))
+    (if (ai?)
       (gm/get-move current-player opponent grid)
       (inc index))))
 
@@ -97,22 +105,28 @@
                (update state :moves conj move)
                state)))))
 
-(defn button [value index on-click]
+(defn button [value index]
   [:input {:id       (str "-my-button-" index)
            :type     "button"
            :value    (if (number? value) "" value)
-           :on-click on-click}])
+           :on-click #(when (human?)
+                        (update-grid index))}])
 
 (defn new-line [side index]
+  ;add in grid here and find side later
+  ;maybe double breaks after 9 buttons in 3x3x3
+  ;else keep the same logic
   (when (= (dec side) (mod index side))
     [:br]))
 
 (defn group-buttons [grid side index]
   [:<>
    [button (get grid index) index #(update-grid index)]
-   (new-line side index)])
+   (new-line side index)])                                  ;add in grid here
 
 (defn make-grid [grid side]
+  ; place cond here for side,
+  ; remove side param
   [:div
    (for [index (range (count grid))]
      ^{:key index}
@@ -138,24 +152,6 @@
         player-name (player-name current-player)]
     (str "Player " player-number " " player-name "'s turn")))
 
-
-;(defn ai-move-button []
-;  (let [ai-thinking (:ai-thinking @game-state)]
-;    (if ai-thinking
-;      [:div.flex-center
-;       [:p "The AI is thinking..."]]
-;      [:div.flex-center
-;       [:button
-;        {:class    "ai-move-btn"
-;         :on-click (fn []
-;                     (swap! game-state assoc :ai-thinking true)
-;                     (js/setTimeout
-;                       (fn []
-;                         (update-grid -1)
-;                         (swap! game-state assoc :ai-thinking false))
-;                       500))}
-;        "AI Move"]])))
-
 (defn ai-thinking-message []
   [:div.flex-center
    [:p "The AI is thinking..."]])
@@ -170,13 +166,14 @@
 
 (defn ai-move-button []
   (let [ai-thinking (:ai-thinking @game-state)]
-    (if ai-thinking
-      [ai-thinking-message]
-      [:div.flex-center
-       [:button
-        {:class    "ai-move-btn"
-         :on-click handle-ai-move-click}
-        "AI Move"]])))
+    (when (ai?)
+      (if ai-thinking
+        [ai-thinking-message]
+        [:div.flex-center
+         [:button
+          {:class    "ai-move-btn"
+           :on-click handle-ai-move-click}
+          "AI Move"]]))))
 
 (defn in-progress-display [grid]
   (when (not (board/game-over? grid {:token "X"} {:token "O"}))
@@ -196,7 +193,7 @@
 
 (defn tic-tac-toe []
   (let [{:keys [new-game size]} @game-state
-        side (if (= size :3x3) 3 4)
+        side (if (= size :4x4) 4 3)                         ; cond for 3 4 or 9
         grid (game/convert-moves-to-board @game-state)]
     [:div.container
      (if new-game

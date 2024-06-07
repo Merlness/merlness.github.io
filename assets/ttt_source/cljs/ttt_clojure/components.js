@@ -25,8 +25,8 @@ ttt_clojure.components.radio_option = (function ttt_clojure$components$radio_opt
 return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"input","input",556931961),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"type","type",1174270348),"radio",new cljs.core.Keyword(null,"id","id",-1388402092),id,new cljs.core.Keyword(null,"name","name",1843675177),option_name,new cljs.core.Keyword(null,"value","value",305978217),value,new cljs.core.Keyword(null,"on-change","on-change",-732046149),on_change_fn], null)], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"label","label",1718410804),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"for","for",-1323786319),id], null),label], null)], null);
 });
 ttt_clojure.components.game_options_form = (function ttt_clojure$components$game_options_form(){
-return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"h1","h1",-1896887462),"Choose your Tic Tac Toe Options"], null),new cljs.core.PersistentVector(null, 17, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"form","form",-1624062471),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"on-submit","on-submit",1227871159),(function (p1__13283_SHARP_){
-return ttt_clojure.components.handle_submit.call(null,p1__13283_SHARP_);
+return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"h1","h1",-1896887462),"Choose your Tic Tac Toe Options"], null),new cljs.core.PersistentVector(null, 17, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"form","form",-1624062471),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"on-submit","on-submit",1227871159),(function (p1__11733_SHARP_){
+return ttt_clojure.components.handle_submit.call(null,p1__11733_SHARP_);
 })], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"p","p",151049309),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"class","class",-2030961996),"centered-text"], null),"Please choose which board you want to play with"], null),new cljs.core.PersistentVector(null, 6, 5, cljs.core.PersistentVector.EMPTY_NODE, [ttt_clojure.components.radio_option,"3x3","size",new cljs.core.Keyword(null,"3x3","3x3",570362544),"3x3",(function (){
 return cljs.core.swap_BANG_.call(null,ttt_clojure.components.game_state,cljs.core.assoc,new cljs.core.Keyword(null,"size","size",1098693007),new cljs.core.Keyword(null,"3x3","3x3",570362544));
 })], null),new cljs.core.PersistentVector(null, 6, 5, cljs.core.PersistentVector.EMPTY_NODE, [ttt_clojure.components.radio_option,"4x4","size",new cljs.core.Keyword(null,"4x4","4x4",121507723),"4x4",(function (){
@@ -46,8 +46,8 @@ return cljs.core.reset_BANG_.call(null,ttt_clojure.components.game_state,ttt_clo
 });
 ttt_clojure.components.can_update_QMARK_ = (function ttt_clojure$components$can_update_QMARK_(grid,index){
 if(cljs.core.not.call(null,ttt_clojure.board.game_over_QMARK_.call(null,grid,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"token","token",-1211463215),"X"], null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"token","token",-1211463215),"O"], null)))){
-var and__4149__auto__ = cljs.core.some.call(null,(function (p1__13284_SHARP_){
-return cljs.core._EQ_.call(null,index,p1__13284_SHARP_);
+var and__4149__auto__ = cljs.core.some.call(null,(function (p1__11734_SHARP_){
+return cljs.core._EQ_.call(null,index,p1__11734_SHARP_);
 }),grid);
 if(cljs.core.truth_(and__4149__auto__)){
 return cljs.core.integer_QMARK_.call(null,cljs.core.get.call(null,grid,(index - (1))));
@@ -65,13 +65,26 @@ return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMP
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"player-2","player-2",-227455796).cljs$core$IFn$_invoke$arity$1(game),new cljs.core.Keyword(null,"player-1","player-1",-857374100).cljs$core$IFn$_invoke$arity$1(game)], null);
 }
 });
+ttt_clojure.components.human_or_ai = (function ttt_clojure$components$human_or_ai(player){
+var moves = new cljs.core.Keyword(null,"moves","moves",927465255).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null,ttt_clojure.components.game_state));
+var vec__11735 = ttt_clojure.components.get_players.call(null,cljs.core.deref.call(null,ttt_clojure.components.game_state),moves);
+var current_player = cljs.core.nth.call(null,vec__11735,(0),null);
+var _ = cljs.core.nth.call(null,vec__11735,(1),null);
+return cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"kind","kind",-717265803).cljs$core$IFn$_invoke$arity$1(current_player),player);
+});
+ttt_clojure.components.human_QMARK_ = (function ttt_clojure$components$human_QMARK_(){
+return ttt_clojure.components.human_or_ai.call(null,new cljs.core.Keyword(null,"human","human",-772334390));
+});
+ttt_clojure.components.ai_QMARK_ = (function ttt_clojure$components$ai_QMARK_(){
+return ttt_clojure.components.human_or_ai.call(null,new cljs.core.Keyword(null,"ai","ai",760454697));
+});
 ttt_clojure.components.calculate_move = (function ttt_clojure$components$calculate_move(state,index){
 var moves = new cljs.core.Keyword(null,"moves","moves",927465255).cljs$core$IFn$_invoke$arity$1(state);
-var vec__13285 = ttt_clojure.components.get_players.call(null,state,moves);
-var current_player = cljs.core.nth.call(null,vec__13285,(0),null);
-var opponent = cljs.core.nth.call(null,vec__13285,(1),null);
+var vec__11738 = ttt_clojure.components.get_players.call(null,state,moves);
+var current_player = cljs.core.nth.call(null,vec__11738,(0),null);
+var opponent = cljs.core.nth.call(null,vec__11738,(1),null);
 var grid = ttt_clojure.game.convert_moves_to_board.call(null,state);
-if(cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"ai","ai",760454697),new cljs.core.Keyword(null,"kind","kind",-717265803).cljs$core$IFn$_invoke$arity$1(current_player))){
+if(ttt_clojure.components.ai_QMARK_.call(null)){
 return ttt_clojure.game_modes.get_move.call(null,current_player,opponent,grid);
 } else {
 return (index + (1));
@@ -88,8 +101,14 @@ return state;
 }
 }));
 });
-ttt_clojure.components.button = (function ttt_clojure$components$button(value,index,on_click){
-return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"input","input",556931961),new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"id","id",-1388402092),["-my-button-",cljs.core.str.cljs$core$IFn$_invoke$arity$1(index)].join(''),new cljs.core.Keyword(null,"type","type",1174270348),"button",new cljs.core.Keyword(null,"value","value",305978217),((typeof value === 'number')?"":value),new cljs.core.Keyword(null,"on-click","on-click",1632826543),on_click], null)], null);
+ttt_clojure.components.button = (function ttt_clojure$components$button(value,index){
+return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"input","input",556931961),new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"id","id",-1388402092),["-my-button-",cljs.core.str.cljs$core$IFn$_invoke$arity$1(index)].join(''),new cljs.core.Keyword(null,"type","type",1174270348),"button",new cljs.core.Keyword(null,"value","value",305978217),((typeof value === 'number')?"":value),new cljs.core.Keyword(null,"on-click","on-click",1632826543),(function (){
+if(ttt_clojure.components.human_QMARK_.call(null)){
+return ttt_clojure.components.update_grid.call(null,index);
+} else {
+return null;
+}
+})], null)], null);
 });
 ttt_clojure.components.new_line = (function ttt_clojure$components$new_line(side,index){
 if(cljs.core._EQ_.call(null,(side - (1)),cljs.core.mod.call(null,index,side))){
@@ -104,25 +123,25 @@ return ttt_clojure.components.update_grid.call(null,index);
 })], null),ttt_clojure.components.new_line.call(null,side,index)], null);
 });
 ttt_clojure.components.make_grid = (function ttt_clojure$components$make_grid(grid,side){
-return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),(function (){var iter__4564__auto__ = (function ttt_clojure$components$make_grid_$_iter__13288(s__13289){
+return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),(function (){var iter__4564__auto__ = (function ttt_clojure$components$make_grid_$_iter__11741(s__11742){
 return (new cljs.core.LazySeq(null,(function (){
-var s__13289__$1 = s__13289;
+var s__11742__$1 = s__11742;
 while(true){
-var temp__5804__auto__ = cljs.core.seq.call(null,s__13289__$1);
+var temp__5804__auto__ = cljs.core.seq.call(null,s__11742__$1);
 if(temp__5804__auto__){
-var s__13289__$2 = temp__5804__auto__;
-if(cljs.core.chunked_seq_QMARK_.call(null,s__13289__$2)){
-var c__4562__auto__ = cljs.core.chunk_first.call(null,s__13289__$2);
+var s__11742__$2 = temp__5804__auto__;
+if(cljs.core.chunked_seq_QMARK_.call(null,s__11742__$2)){
+var c__4562__auto__ = cljs.core.chunk_first.call(null,s__11742__$2);
 var size__4563__auto__ = cljs.core.count.call(null,c__4562__auto__);
-var b__13291 = cljs.core.chunk_buffer.call(null,size__4563__auto__);
-if((function (){var i__13290 = (0);
+var b__11744 = cljs.core.chunk_buffer.call(null,size__4563__auto__);
+if((function (){var i__11743 = (0);
 while(true){
-if((i__13290 < size__4563__auto__)){
-var index = cljs.core._nth.call(null,c__4562__auto__,i__13290);
-cljs.core.chunk_append.call(null,b__13291,cljs.core.with_meta(new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [ttt_clojure.components.group_buttons,grid,side,index], null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"key","key",-1516042587),index], null)));
+if((i__11743 < size__4563__auto__)){
+var index = cljs.core._nth.call(null,c__4562__auto__,i__11743);
+cljs.core.chunk_append.call(null,b__11744,cljs.core.with_meta(new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [ttt_clojure.components.group_buttons,grid,side,index], null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"key","key",-1516042587),index], null)));
 
-var G__13292 = (i__13290 + (1));
-i__13290 = G__13292;
+var G__11745 = (i__11743 + (1));
+i__11743 = G__11745;
 continue;
 } else {
 return true;
@@ -130,13 +149,13 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__13291),ttt_clojure$components$make_grid_$_iter__13288.call(null,cljs.core.chunk_rest.call(null,s__13289__$2)));
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__11744),ttt_clojure$components$make_grid_$_iter__11741.call(null,cljs.core.chunk_rest.call(null,s__11742__$2)));
 } else {
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__13291),null);
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__11744),null);
 }
 } else {
-var index = cljs.core.first.call(null,s__13289__$2);
-return cljs.core.cons.call(null,cljs.core.with_meta(new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [ttt_clojure.components.group_buttons,grid,side,index], null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"key","key",-1516042587),index], null)),ttt_clojure$components$make_grid_$_iter__13288.call(null,cljs.core.rest.call(null,s__13289__$2)));
+var index = cljs.core.first.call(null,s__11742__$2);
+return cljs.core.cons.call(null,cljs.core.with_meta(new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [ttt_clojure.components.group_buttons,grid,side,index], null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"key","key",-1516042587),index], null)),ttt_clojure$components$make_grid_$_iter__11741.call(null,cljs.core.rest.call(null,s__11742__$2)));
 }
 } else {
 return null;
@@ -166,9 +185,9 @@ ttt_clojure.components.turn_message = (function ttt_clojure$components$turn_mess
 var moves = new cljs.core.Keyword(null,"moves","moves",927465255).cljs$core$IFn$_invoke$arity$1(game);
 var player_1 = new cljs.core.Keyword(null,"player-1","player-1",-857374100).cljs$core$IFn$_invoke$arity$1(game);
 var player_2 = new cljs.core.Keyword(null,"player-2","player-2",-227455796).cljs$core$IFn$_invoke$arity$1(game);
-var vec__13293 = ((cljs.core.odd_QMARK_.call(null,cljs.core.count.call(null,moves)))?new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [player_2,"2"], null):new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [player_1,"1"], null));
-var current_player = cljs.core.nth.call(null,vec__13293,(0),null);
-var player_number = cljs.core.nth.call(null,vec__13293,(1),null);
+var vec__11746 = ((cljs.core.odd_QMARK_.call(null,cljs.core.count.call(null,moves)))?new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [player_2,"2"], null):new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [player_1,"1"], null));
+var current_player = cljs.core.nth.call(null,vec__11746,(0),null);
+var player_number = cljs.core.nth.call(null,vec__11746,(1),null);
 var player_name = ttt_clojure.components.player_name.call(null,current_player);
 return ["Player ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(player_number)," ",player_name,"'s turn"].join('');
 });
@@ -186,10 +205,14 @@ return cljs.core.swap_BANG_.call(null,ttt_clojure.components.game_state,cljs.cor
 });
 ttt_clojure.components.ai_move_button = (function ttt_clojure$components$ai_move_button(){
 var ai_thinking = new cljs.core.Keyword(null,"ai-thinking","ai-thinking",2113852343).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null,ttt_clojure.components.game_state));
+if(ttt_clojure.components.ai_QMARK_.call(null)){
 if(cljs.core.truth_(ai_thinking)){
 return new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [ttt_clojure.components.ai_thinking_message], null);
 } else {
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div.flex-center","div.flex-center",-2019004675),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"button","button",1456579943),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"class","class",-2030961996),"ai-move-btn",new cljs.core.Keyword(null,"on-click","on-click",1632826543),ttt_clojure.components.handle_ai_move_click], null),"AI Move"], null)], null);
+}
+} else {
+return null;
 }
 });
 ttt_clojure.components.in_progress_display = (function ttt_clojure$components$in_progress_display(grid){
@@ -201,17 +224,17 @@ return null;
 });
 ttt_clojure.components.game_screen = (function ttt_clojure$components$game_screen(grid,side){
 var moves = new cljs.core.Keyword(null,"moves","moves",927465255).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null,ttt_clojure.components.game_state));
-var vec__13296 = ttt_clojure.components.get_players.call(null,cljs.core.deref.call(null,ttt_clojure.components.game_state),moves);
-var current_player = cljs.core.nth.call(null,vec__13296,(0),null);
-var _ = cljs.core.nth.call(null,vec__13296,(1),null);
+var vec__11749 = ttt_clojure.components.get_players.call(null,cljs.core.deref.call(null,ttt_clojure.components.game_state),moves);
+var current_player = cljs.core.nth.call(null,vec__11749,(0),null);
+var _ = cljs.core.nth.call(null,vec__11749,(1),null);
 return new cljs.core.PersistentVector(null, 6, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"<>","<>",1280186386),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"h1","h1",-1896887462),"Welcome to Merl's Tic Tac Toe"], null),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [ttt_clojure.components.new_game_button], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [ttt_clojure.components.make_grid,grid,side], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [ttt_clojure.components.in_progress_display,grid,current_player], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ttt_clojure.components.game_over_display,grid], null)], null);
 });
 ttt_clojure.components.tic_tac_toe = (function ttt_clojure$components$tic_tac_toe(){
-var map__13299 = cljs.core.deref.call(null,ttt_clojure.components.game_state);
-var map__13299__$1 = cljs.core.__destructure_map.call(null,map__13299);
-var new_game = cljs.core.get.call(null,map__13299__$1,new cljs.core.Keyword(null,"new-game","new-game",167241648));
-var size = cljs.core.get.call(null,map__13299__$1,new cljs.core.Keyword(null,"size","size",1098693007));
-var side = ((cljs.core._EQ_.call(null,size,new cljs.core.Keyword(null,"3x3","3x3",570362544)))?(3):(4));
+var map__11752 = cljs.core.deref.call(null,ttt_clojure.components.game_state);
+var map__11752__$1 = cljs.core.__destructure_map.call(null,map__11752);
+var new_game = cljs.core.get.call(null,map__11752__$1,new cljs.core.Keyword(null,"new-game","new-game",167241648));
+var size = cljs.core.get.call(null,map__11752__$1,new cljs.core.Keyword(null,"size","size",1098693007));
+var side = ((cljs.core._EQ_.call(null,size,new cljs.core.Keyword(null,"4x4","4x4",121507723)))?(4):(3));
 var grid = ttt_clojure.game.convert_moves_to_board.call(null,cljs.core.deref.call(null,ttt_clojure.components.game_state));
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div.container","div.container",72419955),(cljs.core.truth_(new_game)?new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [ttt_clojure.components.game_options_form], null):new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [ttt_clojure.components.game_screen,grid,side], null))], null);
 });

@@ -1,5 +1,5 @@
 ---
-title: "AI is thinking"
+title: "Grid Timeout"
 mathjax: true
 layout: post
 categories: media
